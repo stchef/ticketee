@@ -1,8 +1,10 @@
+load "deploy/assets"
+
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
-set :application, 'my_app_name'
-set :repo_url, 'git@example.com:me/my_repo.git'
+set :application, 'ticketee'
+set :repo_url, 'git@github.com:stchef/ticketee.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -11,7 +13,20 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # set :deploy_to, '/var/www/my_app_name'
 
 # Default value for :scm is :git
-# set :scm, :git
+set :scm, :git
+
+role :web, "[localhost]"
+role :app, "[localhost]"
+role :db,  "[localhost]", :primary => true
+
+set :port, 2200
+
+set :user, "ticketeeapp.com"
+set :deploy_to, "/home/ticketeeapp.com/apps/#{application}"
+
+set :use_sudo, false
+
+default_run_options[:shell] = '/bin/bash --login'
 
 # Default value for :format is :pretty
 # set :format, :pretty
@@ -32,17 +47,26 @@ set :repo_url, 'git@example.com:me/my_repo.git'
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
 
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
+#  after :restart, :clear_cache do
+#    on roles(:web), in: :groups, limit: 3, wait: 10 do
+#      # Here we can do anything such as:
+#      # within release_path do
+#      #   execute :rake, 'cache:clear'
+#      # end
+#    end
+#  end
+
+   namespace :deploy do
+      task :start do ; end
+      task :stop do ; end
+      task :restart, :roles => :app, :except => { :no_release => true } do
+      path = File.join(current_path, 'tmp', 'restart.txt')
+        run "#{try_sudo} touch #{path}"
+      end
+   end
 
 end
