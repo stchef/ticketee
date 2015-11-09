@@ -67,3 +67,7 @@ group :test do
   gem "database_cleaner", "~> 1.4"
   gem "email_spec", "~> 1.6.0"
 end
+
+group :development do
+  gem 'capistrano'
+end
