@@ -71,3 +71,7 @@ end
 group :development do
   gem 'capistrano', "< 3.0"
 end
+
+group :production do
+  gem 'therubyracer'
+end
