@@ -69,5 +69,5 @@ group :test do
 end
 
 group :development do
-  gem 'capistrano'
+  gem 'capistrano', "< 3.0"
 end
