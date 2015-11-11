@@ -4,9 +4,6 @@ ruby "2.2.1"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
 
-gem "sqlite3", group: [:development, :test]
-gem "pg",      group:  :production
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -58,6 +55,7 @@ group :development, :test do
   gem 'spring'
 
   gem "rspec-rails", "~> 3.2.1"
+  gem 'sqlite3'
 end
 
 group :test do
@@ -74,6 +72,7 @@ end
 
 group :production do
   gem 'therubyracer'
+  gem 'pg'
 end
 
 #gem 'dotenv-rails', :groups => [:development, :test, :production]
