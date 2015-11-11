@@ -75,3 +75,5 @@ end
 group :production do
   gem 'therubyracer'
 end
+
+gem 'dotenv-rails', :groups => [:development, :test, :production]
