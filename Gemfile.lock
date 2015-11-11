@@ -300,6 +300,8 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     rubyzip (1.1.7)
+    rvm-capistrano (1.5.6)
+      capistrano (~> 2.15.4)
     sass (3.4.13)
     sass-rails (5.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -380,6 +382,7 @@ DEPENDENCIES
   rails (= 4.2.1)
   rails_12factor
   rspec-rails (~> 3.2.1)
+  rvm-capistrano
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   searcher!

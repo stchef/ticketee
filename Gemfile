@@ -68,6 +68,7 @@ end
 
 group :development do
   gem 'capistrano', "< 3.0"
+  gem 'rvm-capistrano'
 end
 
 group :production do
