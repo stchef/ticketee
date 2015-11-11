@@ -44,6 +44,8 @@ gem "puma", group: :production
 
 gem "sinatra"
 
+gem 'sqlite3'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -55,7 +57,6 @@ group :development, :test do
   gem 'spring'
 
   gem "rspec-rails", "~> 3.2.1"
-  gem 'sqlite3'
 end
 
 group :test do
