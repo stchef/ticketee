@@ -45,6 +45,7 @@ gem "puma", group: :production
 gem "sinatra"
 
 gem 'sqlite3'
+gem 'rvm-capistrano'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -69,7 +70,6 @@ end
 
 group :development do
   gem 'capistrano', "< 3.0"
-  gem 'rvm-capistrano'
 end
 
 group :production do
