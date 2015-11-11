@@ -40,5 +40,5 @@ task :symlink_database_yml do
   run "ln -sfn #{shared_path}/config/database.yml
        #{release_path}/config/database.yml"
 end
-#after "bundle:install", "symlink_database_yml"
+after "bundle:install", "symlink_database_yml"
 
