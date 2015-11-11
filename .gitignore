@@ -17,3 +17,5 @@
 /tmp
 
 uploads
+
+/config/initializers/app_environment_variables.rb
