@@ -41,7 +41,7 @@ gem "searcher", github: "radar/searcher"
 gem "active_model_serializers", "~> 0.9.3"
 
 gem "carrierwave", "~> 0.10.0"
-gem "fog", "~> 1.29.0"
+#gem "fog", "~> 1.29.0"
 gem "rails_12factor", group: :production
 gem "puma", group: :production
 
