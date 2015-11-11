@@ -9,8 +9,9 @@ role :app, "localhost"                          # This may be the same as your `
 role :db,  "localhost", :primary => true # This is where Rails migrations will run
 #role :db,  "your slave db-server here"
 
-set :port, 2200
+#set :port, 2200
 set :user, "ticketeeapp.com"
+set :deploy_to, "/home/#{user}/apps/#{application}"
 set :use_sudo, false
 set :keep_releases, 5
 default_run_options[:shell] = '/bin/bash --login'
